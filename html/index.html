@@ -10,29 +10,32 @@
         let jugador = 0
         let pc = Math.floor(Math.random() * 3) + 1
 
+
+
         function eleccion(jugada){
             let resultado = ""
-            switch(jugada){
+            switch(String(jugada)){
                 case "1":
-                    resultado = "Eligio piedra"
+                    resultado = "Eligio piedra";
                     break
                 case "2":
-                    resultado = "Eligio papel"
+                    resultado = "Eligio papel";
                     break
                 case "3":
-                    resultado = "Eligio tijera"
+                    resultado = "Eligio tijera";
                     break
                 default:
-                    resultado = "Opción no válida"
+                    resultado = "Opción no válida";
                     break
             }
             return resultado
         }
 
         jugador = prompt("Elige una opción:\n1. Piedra\n2. Papel\n3. Tijera")
+       
         
-        alert = "EL jugador : "+eleccion(jugador)
-        alert = "El PC : "+eleccion(pc)
+        alert("EL jugador : "+eleccion(jugador));
+        alert("El PC : "+eleccion(pc));
         
 
         if(pc==jugador){
