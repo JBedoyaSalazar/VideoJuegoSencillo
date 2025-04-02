@@ -1,11 +1,11 @@
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById("botonMascota")
 
-    botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador())
+    botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
 }
 
 function seleccionarMascotaJugador(){
     alert("Tu mascota sera:")
 }
 
-window.addEventListener("load", iniciarJuego)
+window.addEventListener("load", iniciarJuego)   
