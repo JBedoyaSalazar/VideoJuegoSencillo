@@ -113,9 +113,28 @@ function crearMensaje(){
 
     let sectionMensajes = document.getElementById("mensajes")
     let parrafo = document.createElement("p")
-    parrafo.innerHTML = "Tu mascota ataco con "+ataqueJugador+" y el enemigo ataco con "+ataqueEnemigo
+    parrafo.innerHTML = "Tu mascota ataco con "+ataqueJugador+" y el enemigo ataco con "+ataqueEnemigo+" - "+ combate()
 
     sectionMensajes.appendChild(parrafo)
+}
+
+function combate(){
+
+    let mensaje =""
+
+    if(ataqueJugador == ataqueEnemigo){
+        mensaje = "Empate"
+    }else if(ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra"){
+        mensaje = "Ganaste"
+    }else if(ataqueJugador == "Agua" && ataqueEnemigo == "Fuego"){
+        mensaje = "Ganaste"
+    }else if(ataqueJugador == "Tierra" && ataqueEnemigo == "Agua"){
+        mensaje = "Ganaste"
+    }else{
+        mensaje = "Perdiste"
+    }
+
+    return mensaje
 }
 
 window.addEventListener("load", iniciarJuego)   
