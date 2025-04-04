@@ -111,8 +111,8 @@ function ataqueEnemigoAleatorio(){
 
 function crearMensaje(){
 
-    let sectionMensajes = document.getElementById("resultado")
-    let parrafo = createElement("p")
+    let sectionMensajes = document.getElementById("mensajes")
+    let parrafo = document.createElement("p")
     parrafo.innerHTML = "Tu mascota ataco con "+ataqueJugador+" y el enemigo ataco con "+ataqueEnemigo
 
     sectionMensajes.appendChild(parrafo)
