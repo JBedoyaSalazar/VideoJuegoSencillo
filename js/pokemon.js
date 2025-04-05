@@ -5,9 +5,18 @@ let vidasEnemigo = 3
 
 
 function iniciarJuego(){
+
+    let sectionSeleccionarAtaque = document.getElementById("seleccionarAtaque")
+    let sectionReiniciar = document.getElementById("reiniciar")
+
+    sectionSeleccionarAtaque.style.display = "none"
+    sectionReiniciar.style.display = "none"
+
     let botonMascotaJugador = document.getElementById("botonMascota")
 
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
+
+
 
     let botonFuego = document.getElementById("botonFuego")
     let botonAgua = document.getElementById("botonAgua")
@@ -16,9 +25,15 @@ function iniciarJuego(){
     botonFuego.addEventListener("click", ataqueFuego)
     botonAgua.addEventListener("click", ataqueAgua)
     botonTierra.addEventListener("click", ataqueTierra)
+
+    let botonReiniciar = document.getElementById("botonReiniciar")
+    botonReiniciar.addEventListener("click", reiniciarJuego)
 }
 
 function seleccionarMascotaJugador(){
+
+    let sectionSeleccionarAtaque = document.getElementById("seleccionarAtaque")
+    sectionSeleccionarAtaque.style.display = "block"
 
     let inputHipodoge = document.getElementById("hipodoge")
     let inputCapipepo = document.getElementById("capipepo")
@@ -81,6 +96,9 @@ function seleccionarMascotaEnemigo(){
         alert("El enemigo seleccionó a Pydos")
         spanMascotaEnemigo.innerHTML = "Pydos"
     }
+
+    let sectionSeleccionarMascota = document.getElementById("seleccionarMascota")
+    sectionSeleccionarMascota.style.display = "none"
 }
 
 function ataqueFuego(){
@@ -154,11 +172,27 @@ function combate(){
 }
 
 function revisarVidas(){
+
+    let sectionReiniciar = document.getElementById("reiniciar")
+
     if(vidasEnemigo == 0){
         alert("Ganaste el juego")
+        document.getElementById("botonFuego").disabled = true
+        document.getElementById("botonAgua").disabled = true
+        document.getElementById("botonTierra").disabled = true
+        sectionReiniciar.style.display = "block"
     }else if(vidasJugador == 0){
         alert("Perdiste el juego")
+        document.getElementById("botonFuego").disabled = true
+        document.getElementById("botonAgua").disabled = true
+        document.getElementById("botonTierra").disabled = true
+        sectionReiniciar.style.display = "block"
     }
+
+}
+
+function reiniciarJuego(){
+    location.reload()
 }
 
 window.addEventListener("load", iniciarJuego)   
