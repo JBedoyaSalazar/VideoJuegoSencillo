@@ -1,5 +1,8 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
+
 
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById("botonMascota")
@@ -120,21 +123,42 @@ function crearMensaje(){
 
 function combate(){
 
+    let spanVidasJugador = document.getElementById("vidasJugador")
+    let spanVidasEnemigo = document.getElementById("vidasEnemigo")
+
     let mensaje =""
 
     if(ataqueJugador == ataqueEnemigo){
         mensaje = "Empate"
     }else if(ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra"){
         mensaje = "Ganaste"
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else if(ataqueJugador == "Agua" && ataqueEnemigo == "Fuego"){
         mensaje = "Ganaste"
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else if(ataqueJugador == "Tierra" && ataqueEnemigo == "Agua"){
         mensaje = "Ganaste"
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else{
         mensaje = "Perdiste"
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
     }
 
+    revisarVidas()
+    
     return mensaje
+}
+
+function revisarVidas(){
+    if(vidasEnemigo == 0){
+        alert("Ganaste el juego")
+    }else if(vidasJugador == 0){
+        alert("Perdiste el juego")
+    }
 }
 
 window.addEventListener("load", iniciarJuego)   
