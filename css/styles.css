@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(33, 46, 57);
+}
+
+#titulo{
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    width: 100vh;
+    height: 100px;
+    size: 10px;
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 0%;
+    margin: 0%;
+}
+
+#seleccionarMascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#contenedorMascotas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.tarjetaMokepon{
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+input{
+    display: none;
+}
+
+#botonMascota{
+    background-color: rgb(187, 219, 182);
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none 2px black;
+}
