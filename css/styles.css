@@ -42,14 +42,29 @@ body{
 }
 
 .tarjetaMokepon{
-    width: 100px;
+    width: 250px;
     height: 100px;
     background-color: #114668;
-    padding: 10px;
     box-sizing: border-box;
     margin: 10px;
     border: solid 2px black;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjetaMokepon p{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.tarjetaMokepon img{
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
 }
 
 input{
