@@ -19,44 +19,46 @@
 
             <div class="tarjetas">
 
+                <input type="radio" name="mascota" id="hipodoge">
                 <label class="tarjetaMokepon" for="hipodoge">
                     <!--<p>Hipodoge</p>-->
                     <img src="/images/dragon.jpg" alt="Hipodoge">
                 </label>
-                <input type="radio" name="mascota" id="hipodoge">
-
+                
+                <input type="radio" name="mascota" id="capipepo">
                 <label class="tarjetaMokepon" for="capipepo">
                     <!--<p>Capipepo</p>-->
                     <img src="/images/patito.jpg" alt="Capipepo">
                 </label>
-                <input type="radio" name="mascota" id="capipepo">
-
+                
+                <input type="radio" name="mascota" id="ratigueya">
                 <label class="tarjetaMokepon" for="ratigueya">
                     <!--<p>Ratigueya</p>-->
                     <img src="/images/phoenix.jpg" alt="Ratigueya">
                 </label>
-                <input type="radio" name="mascota" id="ratigueya">
-
+                
             </div>
 
             <div class="tarjetas">
+
+                <input type="radio" name="mascota" id="langostelvis">
                 <label class="tarjetaMokepon" for="langostelvis">
                     <!--<p>Langostelvis</p>-->
                     <img src="/images/pikachu.jpg" alt="Langostelvis">
                 </label>
-                <input type="radio" name="mascota" id="langostelvis">
-
+                
+                <input type="radio" name="mascota" id="tucapalma">
                 <label class="tarjetaMokepon" for="tucapalma">
                     <!--<p>Tucapalma</p>-->
                     <img src="/images/tierra.jpg" alt="Tucapalma">
                 </label>
-                <input type="radio" name="mascota" id="tucapalma">
-
+                
+                <input type="radio" name="mascota" id="pydos">
                 <label class="tarjetaMokepon" for="pydos">
                     <!--<p>Pydos</p>-->
                     <img src="/images/unicornio.jpg" alt="Pydos">
                 </label>
-                <input type="radio" name="mascota" id="pydos">
+                
             </div>
             
         </div>
@@ -70,7 +72,7 @@
 
         <h2 class="subtitulo">Selecciona el ataque</h2>
 
-        <div>
+        <div class="tarjetasAtaques">
             <button id="botonFuego" class="botonDeAtaque">Fire🔥</button>
             <button id="botonAgua" class="botonDeAtaque">Water💧</button>
             <button id="botonTierra" class="botonDeAtaque">Dirt🌱</button>
@@ -84,20 +86,20 @@
                 <button id="botonReiniciar">Reiniciar</button>
             </section>
         </div>
-                
-            
-        
 
-        <div>
-            <div id="ataquesDelJugador"></div>
-            <div id="ataquesDelEnemigo"></div>
-            <p>Tu mascota <span id="nombreMascotaJugador"></span> tiene <span id="vidasJugador">3</span> vidas</p>
-            <p>La mascota del contrincante <span id="nombreMascotaEnemigo"></span> tiene <span id="vidasEnemigo">3</span> vidas</p>
+        <div class="ataques">
+            <div class="ataqueMensajes">
+                <p id="vidasJugador">3</p>
+                <p id="nombreMascotaJugador"></p>
+                <div id="ataquesDelJugador"></div>
+            </div>
+
+            <div class="ataqueMensajes">
+                <p id="vidasEnemigo">3</p>
+                <p id="nombreMascotaEnemigo"></p>
+                <div id="ataquesDelEnemigo"></div>
+            </div>         
         </div>
     </section>
-
-    
-
-    
 </body>
 </html>
