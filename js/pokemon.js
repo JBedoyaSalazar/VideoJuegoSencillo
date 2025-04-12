@@ -33,7 +33,7 @@ function iniciarJuego(){
 function seleccionarMascotaJugador(){
 
     let sectionSeleccionarAtaque = document.getElementById("seleccionarAtaque")
-    sectionSeleccionarAtaque.style.display = "block"
+    sectionSeleccionarAtaque.style.display = "flex"
 
     let inputHipodoge = document.getElementById("hipodoge")
     let inputCapipepo = document.getElementById("capipepo")
@@ -132,11 +132,20 @@ function ataqueEnemigoAleatorio(){
 
 function crearMensaje(){
 
-    let sectionMensajes = document.getElementById("mensajes")
-    let parrafo = document.createElement("p")
-    parrafo.innerHTML = "Tu mascota ataco con "+ataqueJugador+" y el enemigo ataco con "+ataqueEnemigo+" - "+ combate()
+    let sectionMensajes = document.getElementById("resultado")
+    let ataquesDelJugador = document.getElementById("ataquesDelJugador")
+    let ataquesDelEnemigo = document.getElementById("ataquesDelEnemigo")
 
-    sectionMensajes.appendChild(parrafo)
+    let nuevoAtaqueDelJugador = document.createElement("p")
+    let nuevoAtaqueDelEnemigo = document.createElement("p")
+
+    sectionMensajes.innerHTML = combate()
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
+    
 }
 
 function combate(){

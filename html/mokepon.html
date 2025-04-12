@@ -66,26 +66,37 @@
     </section>
 
     <section id="seleccionarAtaque">
-        <h1 id="titulo">Welcome to the mokepon Game!</h1>
-        <h2>Selecciona el ataque</h2>
+        <h1 class="titulo">Welcome to the mokepon Game!</h1>
 
-        <p>Tu mascota <span id="nombreMascotaJugador"></span> tiene <span id="vidasJugador">3</span> vidas</p>
-        <p>La mascota del contrincante <span id="nombreMascotaEnemigo"></span> tiene <span id="vidasEnemigo">3</span> vidas</p>
+        <h2 class="subtitulo">Selecciona el ataque</h2>
 
-        <p>
-            <button id="botonFuego">Fire🔥</button>
-            <button id="botonAgua">Water💧</button>
-            <button id="botonTierra">Dirt🌱</button>
-        </p>
-    </section>
+        <div>
+            <button id="botonFuego" class="botonDeAtaque">Fire🔥</button>
+            <button id="botonAgua" class="botonDeAtaque">Water💧</button>
+            <button id="botonTierra" class="botonDeAtaque">Dirt🌱</button>
+        </div>
 
-    <section id="mensajes">
+        <div id="mensajes">  
+            
+            <p id="resultado">Good Luck!</p>
+
+            <section id="reiniciar">
+                <button id="botonReiniciar">Reiniciar</button>
+            </section>
+        </div>
+                
+            
         
+
+        <div>
+            <div id="ataquesDelJugador"></div>
+            <div id="ataquesDelEnemigo"></div>
+            <p>Tu mascota <span id="nombreMascotaJugador"></span> tiene <span id="vidasJugador">3</span> vidas</p>
+            <p>La mascota del contrincante <span id="nombreMascotaEnemigo"></span> tiene <span id="vidasEnemigo">3</span> vidas</p>
+        </div>
     </section>
+
     
-    <section id="reiniciar">
-        <button id="botonReiniciar">Reiniciar</button>
-    </section>
 
     
 </body>
