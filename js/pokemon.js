@@ -18,9 +18,6 @@ const spanVidasEnemigo = document.getElementById("vidasEnemigo")
 const contenedorTarjetas = document.getElementById("contenedorTarjetas")
 const contenedorAtaques = document.getElementById("contenedorAtaques")
 
-let mokepones = []
-let ataqueJugador
-let ataqueEnemigo
 let opcionDeMokepones
 let inputHipodoge 
 let inputCapipepo 
@@ -29,6 +26,12 @@ let botonFuego
 let botonAgua
 let botonTierra
 let mascotaJugador
+let ataqueMokepon
+let ataqueMokeponEmemigo
+let botones = []
+let mokepones = []
+let ataqueJugador = []
+let ataqueEnemigo = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -132,8 +135,10 @@ function seleccionarMascotaEnemigo(){
 
     alert("El enemigo eligió a: " + mokepones[random].nombre)
     spanMascotaEnemigo.innerHTML = mokepones[random].nombre
-
+    ataqueMokeponEmemigo = mokepones[random].ataques
     sectionSeleccionarMascota.style.display = "none"
+
+    secuenciaAtaque()
 }
 
 function extraerAtaques(mascotaJugador){
@@ -158,37 +163,44 @@ function mostrarAtaques(ataques){
     botonAgua = document.getElementById("botonAgua")
     botonTierra = document.getElementById("botonTierra")
 
-    botonFuego.addEventListener("click", ataqueFuego)
-    botonAgua.addEventListener("click", ataqueAgua)
-    botonTierra.addEventListener("click", ataqueTierra)
+    botones = document.querySelectorAll(".BAtaque")
 }
 
-function ataqueFuego(){
-    ataqueJugador = "Fuego"
-    ataqueEnemigoAleatorio()
-}
-
-function ataqueAgua(){
-    ataqueJugador = "Agua"
-    ataqueEnemigoAleatorio()
-}
-
-function ataqueTierra(){   
-    ataqueJugador= "Tierra"
-    ataqueEnemigoAleatorio()
+function secuenciaAtaque(){
+    botones.forEach((boton) => {
+        boton.addEventListener("click", (e) =>{
+            if(e.target.textContent === "🔥"){
+                ataqueJugador.push("Fuego")
+                boton.style.width = "50px"
+                boton.style.height = "50px"
+                console.log(ataqueJugador)
+            }else if(e.target.textContent === "💧"){
+                ataqueJugador.push("Agua")
+                boton.style.width = "50px"
+                boton.style.height = "50px"
+                console.log(ataqueJugador)
+            }else{
+                ataqueJugador.push("Tierra")
+                boton.style.width = "50px"
+                boton.style.height = "50px"
+                console.log(ataqueJugador)
+            }
+            ataqueEnemigoAleatorio()
+        })   
+    }) 
 }
 
 function ataqueEnemigoAleatorio(){
-    let random = aleatorio(1, 3)
-    if(random == 1){
-        ataqueEnemigo = "Fuego"
-    }else if(random == 2){
-        ataqueEnemigo = "Agua"
-    }else{
-        ataqueEnemigo = "Tierra"
-    }
+    let random = aleatorio(0, ataqueMokeponEmemigo.length -1)
 
-    crearMensaje()
+    if(random == 0 || random == 1){
+        ataqueEnemigo.push("Fuego")
+    }else if(random == 3 || random == 4){
+        ataqueEnemigo.push("Agua")
+    }else{
+        ataqueEnemigo.push("Tierra")
+    }
+    console.log(ataqueEnemigo)
 }
 
 function crearMensaje(){
@@ -206,8 +218,6 @@ function crearMensaje(){
 }
 
 function combate(){
-
-    
 
     let mensaje =""
 
