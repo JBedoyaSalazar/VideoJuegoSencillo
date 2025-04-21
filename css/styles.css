@@ -156,9 +156,16 @@ input:checked + label{
     justify-content: center;
 }
 
-#mapa{
-    border: 2px solid white;
+#verMapa button{
+    background-color: rgb(187, 219, 182);
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none 2px black;
+    cursor: pointer;
+    margin: 8px;
 }
+
 
 @media(max-width: 800px){
     .tarjetas, .tarjetasAtaques{
@@ -181,4 +188,12 @@ input:checked + label{
         width: 90%;
     }
 
+}
+
+@media(max-width:300px){
+    #verMapa div{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
