@@ -171,8 +171,6 @@ function aleatorio(min, max){
 
 function seleccionarMascotaJugador(){
 
-    sectionSeleccionarMascota.style.display = "none"
-
     if(inputHipodoge.checked){
         alert("Seleccionaste a: "+ inputHipodoge.id)
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -187,8 +185,10 @@ function seleccionarMascotaJugador(){
         mascotaJugador = inputRatigueya.id
     }else{
         alert("No has seleccionado nunguna mascota, ERROR!!")
+        return
     }
 
+    sectionSeleccionarMascota.style.display = "none"
     seleccionarMokepon(mascotaJugador)
 
     sectionVerMapa.style.display = "flex"
