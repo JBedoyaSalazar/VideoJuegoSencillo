@@ -1,0 +1,22 @@
+{
+  "name": "videojuegosencillo",
+  "version": "1.0.0",
+  "description": "En este Repositorio voy a poner todo lo relacionado con el curso de programación básica de Platzi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBedoyaSalazar/VideoJuegoSencillo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JBedoyaSalazar/VideoJuegoSencillo/issues"
+  },
+  "homepage": "https://github.com/JBedoyaSalazar/VideoJuegoSencillo#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
